@@ -1,0 +1,7 @@
+.flaskenv
+*.pyc
+venv
+venv2
+app.db
+app_backup.db
+__pychache__

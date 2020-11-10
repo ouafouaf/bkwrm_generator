@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bookworm Worksheet Generator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="row">
+
+
+                <div class="col-md-8 offset-md-2">
+
+                    <!-- form card register -->
+                    <div class="card card-outline-secondary">
+                        <div class="card-header">
+                            <h3 class="mb-0">Create Worksheet</h3>
+                        </div>
+                        <div class="card-body">
+
+                            <form action="/" method="post" class="form" role="form" autocomplete="off">
+
+                                {{ form.csrf_token }}
+
+                                <div class="form-group">
+                                    <b>Title</b> (Optional)<br>
+                                    {{ form.title(class="form-control", placeholder="Worksheet title") }}
+                                </div>
+
+                                <div class="form-group">
+                                    <b>Number of lines per page:</b><br>
+                                    {% for choice in form.lines %}
+                                        <div class="form-check">
+                                        {{ choice(class="form-check-input")}}
+                                        {{ choice.label(class="form-check-label") }}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+
+                                <div class="form-group">
+                                    <b>Text</b> (Optional) 
+                                    <br>Each line in thix box will be a line in the pdf file.
+                                    <br>If no title, will produce empty writing sheet.
+                                    {{ form.text(class="form-control", rows="5") }}
+                                </div>
+
+
+                                <div class="form-group">
+                                    <input type="submit" value="Create" class="btn btn-success btn-lg float-right">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /form card register -->
+
+                </div>
+
+
+            </div>
+            <!--/row-->
+
+        <br><br><br><br>
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+
+
+</div>
+<!--/container-->
+
+(c) Dominus Rage
+
+</body>
+</html>
+
