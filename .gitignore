@@ -5,3 +5,4 @@ venv2
 app.db
 app_backup.db
 __pychache__
+tests
